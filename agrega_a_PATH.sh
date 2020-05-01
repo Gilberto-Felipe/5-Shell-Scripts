@@ -19,16 +19,16 @@ echo "Array of parameters: $*"
 if [ $# -le 0 ]; then  
     echo "Introduce, at least, one directory."
 else
-    # iterate upon the array of parameters, and add them to the PATH
+    # iterateation upon the array of parameters, and adding them to the PATH
     for directory in $*; do
         PATH="$PATH:$directory"
     done
 fi
 
+# Printing new PATH
 echo "New PATH: $PATH"
 
-# Original PATH
+# Printing original PATH
 PATH=$PATH
-
 echo "PATH returned to original: $PATH"
 
