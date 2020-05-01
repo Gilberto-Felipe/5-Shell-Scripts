@@ -24,12 +24,12 @@ do
     # getting the sum of the elements
     suma=$((suma + num))
 
-    # ordering the numbers quick sort min
+    # gettin the min
     if [ $num -lt $min ]; then
         min=$num
     fi
 
-    # ordering the numbers quick sort max
+    # getting the max
     if [ $num -gt $max ]; then
         max=$num
     fi
@@ -45,7 +45,7 @@ do
     suma_distancia=$((suma_distancia + xdistancia))
 done
 
-
+# completing the formula
 suma_num_elementos=`echo "scale=2; $suma_distancia / $total_num" | bc`
 
 desviacionE=`echo "scale=2; sqrt($suma_num_elementos)" | bc`
