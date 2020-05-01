@@ -29,6 +29,6 @@ fi
 echo "New PATH: $PATH"
 
 # Printing original PATH
-PATH=$PATH
+PATH=$temp
 echo "PATH returned to original: $PATH"
 
