@@ -11,18 +11,19 @@ op='?'
 until [ $a = 0 -a $b = 0 -a $op='q' ]
 do
     read -p "First number: " a 
-    read -p "Operator. It can be [ +, -, * , / ]: " op
+    read -p "Operator. It can be [ +, -, '*' , / ]: " op
     read -p "Second number: " b
 
     case "$op" in
         +) echo $(( $a + $b ));;
-        -) echo $(( $a - $b ));;
+        -) 
+            if [ $a -le $b ]; then
+                echo $(( $b - $a ))
+            fi 
+        ;;
         /) echo $(( $a / $b ));;
-        *) echo $(( $a * $b ));;
+        '*') echo $(( $a * $b ));;
     esac
 done
 
 echo "Bye"
-
-
-
